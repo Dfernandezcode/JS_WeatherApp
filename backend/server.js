@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 
-// Dynamic import of node-fetch
 let fetch;
 import('node-fetch').then(module => {
   fetch = module.default;
@@ -9,7 +8,6 @@ import('node-fetch').then(module => {
 
 const app = express();
 
-// Use dotenv to load environment variables if you have a .env file
 require('dotenv').config();
 
 const apiKey = process.env.WEATHER_API_KEY;
@@ -19,11 +17,9 @@ app.use(cors());
 
 app.get('/weather/:city', async (req, res) => {
   try {
-    // Ensure that fetch is loaded
     if (!fetch) {
       return res.status(500).json({ error: 'Server is initializing. Please try again later.' });
     }
-
     const city = req.params.city;
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     const data = await response.json();
