@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --dark : #222;
+    --light : #fff;
+    --light-grey: #949494;
+    --bgGreen: #00feba;
+    --bgPurple: #5b548a;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    max-width: 500px;
+    max-height: fit-content;
+    color: var(--light);
+    background: linear-gradient(135deg, var(--bgGreen), var(--bgPurple));
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.weather {
+    display: none;
+}
+
+.error {
+    text-align: center;
+    margin: 20px 0 0 10px;
+    font-size: 14px;
+    display: none;
+}
+  
+
+.search {
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.searchBar {
+    border-radius: 25px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    background-color: var(--light);
+    color: var(--dark);
+    flex: 1;
+    padding: 10px 25px;
+    margin-right: 20px;
+}
+
+.searchBtn{
+    border: 0;
+    outline: 0;
+    background-color: var(--light);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input::placeholder {
+    color: var(--light-grey);
+}
+
+.searchBtn img {
+    height: 20px;
+} 
+
+.weather-icon {
+    width: 120px;
+    margin: 30px 0 0 0;
+}
+.weather h1{
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: -10px;
+    text-decoration: underline solid 1px var(--light);
+    text-underline-offset: 15px;
+}
+
+.feels-like {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.weather h2{
+    font-size: 40px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+
+.details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.col img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+.humidity, .wind {
+    font-size: 20px;
+}
+
+.col-text {
+    font-size: 16px;
+}
+
+
