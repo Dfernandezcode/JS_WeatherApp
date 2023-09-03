@@ -55,3 +55,4 @@ if (searchBtn && searchBox) {
 } else {
   console.log("Search button or search box not found.");
 }
+    

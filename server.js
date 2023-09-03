@@ -19,6 +19,11 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.use(cors());
 
+// Serve frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
 app.get('/weather/:city', async (req, res) => {
   try {
     if (!fetch) {
@@ -34,10 +39,6 @@ app.get('/weather/:city', async (req, res) => {
   }
 });
 
-// Serve frontend
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
