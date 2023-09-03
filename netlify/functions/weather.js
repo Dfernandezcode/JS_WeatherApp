@@ -7,7 +7,6 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 exports.handler = async function(event, context) {
   try {
     const city = event.queryStringParameters.city;
-
     if (!city) {
       return {
         statusCode: 400,
@@ -17,6 +16,7 @@ exports.handler = async function(event, context) {
 
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     const data = await response.json();
+
     return {
       statusCode: 200,
       body: JSON.stringify(data)
