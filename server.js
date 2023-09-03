@@ -29,6 +29,7 @@ app.get('/weather/:city', async (req, res) => {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     const data = await response.json();
     res.json(data);
+    console.log(response);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'An error occurred' });

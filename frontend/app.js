@@ -10,6 +10,7 @@ async function checkWeather(city) {
 
     if (response.ok) {
       const data = await response.json();
+      console.log(data);
 
       document.querySelector(".city").innerHTML = data.name;
       document.querySelector(".temperature").innerHTML =
