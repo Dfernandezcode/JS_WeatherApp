@@ -4,7 +4,8 @@ const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
   try {
-    const response = await fetch(`/.netlify/functions/weather?city=${city}`);
+    const response = await fetch(`/weather/${city}`);
+
 
 
     if (response.ok) {
