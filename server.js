@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');  // Importing path for file serving
+const path = require('path');
 
 let fetch;
 import('node-fetch').then(module => {
@@ -19,11 +19,7 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.use(cors());
 
-// Serve frontend
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
-});
-
+// API route for weather
 app.get('/weather/:city', async (req, res) => {
   try {
     if (!fetch) {
@@ -39,6 +35,10 @@ app.get('/weather/:city', async (req, res) => {
   }
 });
 
+// Serve frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
